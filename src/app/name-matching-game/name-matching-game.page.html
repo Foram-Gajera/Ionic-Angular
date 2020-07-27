@@ -14,7 +14,7 @@
                         Home
                     </ion-button>
                 </div>
-                <form (ngSubmit)="onSubmit()" #nameMatchingForm="ngForm">
+                <form (ngSubmit)="onSubmit(nameMatchingForm)" #nameMatchingForm="ngForm">
                     <ion-card>
                         <ion-card-header color="success">
                             <div class="ion-text-center">
@@ -26,7 +26,6 @@
                             <ion-item>
                                 <ion-label>Name1:</ion-label>
                                 <ion-input placeholder="Enter Name" [(ngModel)]="formModel.name1" name="name1" type="text" required></ion-input>
-
                             </ion-item>
                             <ion-item>
                                 <ion-label>Name2:</ion-label>
@@ -48,7 +47,7 @@
                     </div>
                     <div class="row ion-text-center">
                         <div class="ml-auto mr-auto mt-5 text-info h1">
-                            Matching
+                            <img src="../../assets/heart.png" height="100px" width="100px" />
                         </div>
                     </div>
                     <div class="row ion-text-center">

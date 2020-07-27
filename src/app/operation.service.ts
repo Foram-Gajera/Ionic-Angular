@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { HTTP } from '@ionic-native/http/ngx';
+import { HTTP } from '@ionic-native/http';
 // import { HTTP } from '@ionic-native/http';
 
 @Injectable({

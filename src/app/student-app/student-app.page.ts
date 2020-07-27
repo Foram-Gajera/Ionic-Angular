@@ -16,7 +16,7 @@ export class StudentAppPage implements OnInit {
 
   rootUrl = 'http://gsmktg.azurewebsites.net/api/v1/techlabs/test/students/';
 
-  constructor(private operationService: OperationService, private router: Router, private http: HTTP) { }
+  constructor(private operationService: OperationService, private router: Router) { }
 
   ngOnInit() {
     // this.http.get(this.rootUrl, {}, {}).then(
