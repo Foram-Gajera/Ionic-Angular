@@ -10,5 +10,34 @@
             Home
         </ion-button>
     </div>
+    <ion-card>
+        <ion-card-header color="success">
+            <div class="ion-text-center">
+                <ion-card-title>Expense Tracker</ion-card-title>
+            </div>
+        </ion-card-header>
 
+        <ion-card-content>
+            <ion-item class="ion-text-center">
+                <ion-label class="text-danger font-weight-bold">
+                    <h1>Your Balance: {{balance}} </h1>
+                </ion-label>
+            </ion-item>
+            <div class="ion-text-center">
+                <ion-button type="button" color="primary" class="mt-4" href="/expense-tracker/add-saving">
+                    Add Saving
+                </ion-button>
+            </div>
+            <div class="ion-text-center">
+                <ion-button type="button" color="primary" class="mt-4" href="/expense-tracker/add-expense">
+                    Add Expense
+                </ion-button>
+            </div>
+            <div class="ion-text-center">
+                <ion-button type="button" color="primary" class="mt-4" href="/expense-tracker/view-history">
+                    View History
+                </ion-button>
+            </div>
+        </ion-card-content>
+    </ion-card>
 </ion-content>

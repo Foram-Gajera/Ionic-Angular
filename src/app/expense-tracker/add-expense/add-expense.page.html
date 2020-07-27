@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>addExpense</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <form (ngSubmit)="onSubmit(addExpenseForm)" #addExpenseForm="ngForm">
+        <ion-card>
+            <ion-card-header color="success">
+                <div class="ion-text-center">
+                    <ion-card-title>Add Expenses</ion-card-title>
+                </div>
+            </ion-card-header>
+
+            <ion-card-content>
+                <ion-item>
+                    <ion-label>Enter Amount:</ion-label>
+                    <ion-input [(ngModel)]="formModel.amount" name="amount" type="number" required></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label>Tag</ion-label>
+                    <ion-input [(ngModel)]="formModel.tag" name="tag" type="text" required></ion-input>
+                </ion-item>
+                <div class="ion-text-center">
+                    <ion-button type="submit" color="primary" class="mt-4" [disabled]="addExpenseForm.invalid">
+                        Submit
+                    </ion-button>
+                </div>
+            </ion-card-content>
+        </ion-card>
+    </form>
+
+</ion-content>

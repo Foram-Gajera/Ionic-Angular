@@ -33,9 +33,7 @@ export class NameMatchingGamePage implements OnInit {
 
   onSubmit(form: NgForm){
     this.submitted = true;
-    // this.formModel.reset();
     // this.formModel.percentage = this.MatchString();
-    // alert('form' + this.formModel);
     console.log(this.formModel);
     const x = this.formModel.name1;
     // tslint:disable-next-line:prefer-for-of

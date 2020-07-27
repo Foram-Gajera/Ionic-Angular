@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>addSaving</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <form (ngSubmit)="onSubmit(addSavingForm)" #addSavingForm="ngForm">
+        <ion-card>
+            <ion-card-header color="success">
+                <div class="ion-text-center">
+                    <ion-card-title>Add Saving</ion-card-title>
+                </div>
+            </ion-card-header>
+
+            <ion-card-content>
+                <ion-item>
+                    <ion-label>Add Saving:</ion-label>
+                    <ion-input [(ngModel)]="formModel.saving" name="saving" type="number" required></ion-input>
+                </ion-item>
+                <div class="ion-text-center">
+                    <ion-button type="submit" color="primary" class="mt-4" [disabled]="addSavingForm.invalid">
+                        Submit
+                    </ion-button>
+                </div>
+            </ion-card-content>
+        </ion-card>
+    </form>
+
+</ion-content>
