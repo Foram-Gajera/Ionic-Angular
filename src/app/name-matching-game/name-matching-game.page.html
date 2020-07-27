@@ -1,0 +1,73 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Name Matching Game</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="text-center">
+    <ion-grid class="container">
+        <ion-row>
+            <ion-col class="ion-align-self-center">
+                <div class="row">
+                    <ion-button type="button" color="secondary" href="/home" class="mt-4 float-left ml-4">
+                        Home
+                    </ion-button>
+                </div>
+                <form (ngSubmit)="onSubmit()" #nameMatchingForm="ngForm">
+                    <ion-card>
+                        <ion-card-header color="success">
+                            <div class="ion-text-center">
+                                <ion-card-title>Name Matching</ion-card-title>
+                            </div>
+                        </ion-card-header>
+
+                        <ion-card-content>
+                            <ion-item>
+                                <ion-label>Name1:</ion-label>
+                                <ion-input placeholder="Enter Name" [(ngModel)]="formModel.name1" name="name1" type="text" required></ion-input>
+
+                            </ion-item>
+                            <ion-item>
+                                <ion-label>Name2:</ion-label>
+                                <ion-input placeholder="Enter Name" [(ngModel)]="formModel.name2" name="name2" type="text" required></ion-input>
+                            </ion-item>
+                            <div class="ion-text-center">
+                                <ion-button type="submit" color="primary" class="mt-4" [disabled]="nameMatchingForm.invalid">
+                                    Submit
+                                </ion-button>
+                            </div>
+                        </ion-card-content>
+                    </ion-card>
+                </form>
+                <div [hidden]="!submitted">
+                    <div class="row">
+                        <div class="ml-auto mr-auto mt-5 h3">
+                            {{formModel.name1}}
+                        </div>
+                    </div>
+                    <div class="row ion-text-center">
+                        <div class="ml-auto mr-auto mt-5 text-info h1">
+                            Matching
+                        </div>
+                    </div>
+                    <div class="row ion-text-center">
+                        <div class="ml-auto mr-auto mt-5 h3">
+                            {{formModel.name2}}
+                        </div>
+                    </div>
+
+                    <div class="row ion-text-center">
+                        <div class="ml-auto mr-auto mt-5 text-danger font-weight-bold h2">
+                            Percentage : {{formModel.percentage}} %
+                        </div>
+                    </div>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+
+
+
+</ion-content>

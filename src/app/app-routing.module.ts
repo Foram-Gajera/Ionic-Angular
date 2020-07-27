@@ -11,6 +11,22 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'name-matching-game',
+    loadChildren: () => import('./name-matching-game/name-matching-game.module').then( m => m.NameMatchingGamePageModule)
+  },
+  {
+    path: 'expense-tracker',
+    loadChildren: () => import('./expense-tracker/expense-tracker.module').then( m => m.ExpenseTrackerPageModule)
+  },
+  {
+    path: 'contacts-app',
+    loadChildren: () => import('./contacts-app/contacts-app.module').then( m => m.ContactsAppPageModule)
+  },
+  {
+    path: 'student-app',
+    loadChildren: () => import('./student-app/student-app.module').then( m => m.StudentAppPageModule)
+  }
 ];
 
 @NgModule({

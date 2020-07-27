@@ -1,5 +1,7 @@
 {
   "name": "MultiTaskApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

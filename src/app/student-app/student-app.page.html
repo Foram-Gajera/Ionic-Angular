@@ -1,0 +1,71 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>StudentApp</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="text-center">
+    <ion-grid>
+        <ion-row>
+            <ion-col class="ion-align-self-center">
+                <div class="row">
+                    <ion-button type="button" color="secondary" href="/home" class="float-left ml-3">
+                        Home
+                    </ion-button>
+                    <ion-button type="button" color="primary" href="student-app/add-update-student" class="float-right">
+                        Add Student
+                    </ion-button>
+                    <!-- <button class="btn btn-success" (click)="add()">Update</button>&nbsp; -->
+
+                </div>
+                <div class="text-info">
+                    <h1 class="tableHead">Student List</h1>
+
+                </div>
+
+                <div class="col-md-12 col-sm-10">
+                    <table class="table table-striped table-bordered" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>Index.</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Roll No</th>
+                                <th>DOB</th>
+                                <th>Age</th>
+                                <th>isMale</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let student of students; let i=index">
+                                <td>{{i+1}}</td>
+                                <td>{{student.name}}</td>
+                                <td>{{student.email}}</td>
+                                <td>{{student.rollNo}}</td>
+                                <td>{{student.date}}</td>
+                                <td>{{student.age}}</td>
+                                <td>{{student.isMale}}</td>
+
+                                <td>
+                                    <ion-button color="success" class="mb-2" href="/student-app/add-update-student/{{student.id}}">
+                                        Update
+                                    </ion-button>
+                                    <!-- <button class="btn btn-success" (click)="update(student.id)">Update</button>&nbsp; -->
+                                    <button class="btn btn-danger mt-1" (click)="delete(student.id, student.name)">DELETE</button>
+                                </td>
+                            </tr>
+                            <div [hidden]="students">
+                                <mat-spinner></mat-spinner>
+                                <h3>Loading...</h3>
+                            </div>
+                        </tbody>
+                    </table>
+                </div>
+
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+</ion-content>

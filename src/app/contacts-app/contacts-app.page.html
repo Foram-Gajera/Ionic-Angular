@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>ContactsApp</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="row">
+        <ion-button type="button" color="secondary" href="/home" class="mt-4 float-left ml-4">
+            Home
+        </ion-button>
+    </div>
+    <ion-navbar>
+        <ion-searchbar (keyup)="onkeyup($event)">
+        </ion-searchbar>
+    </ion-navbar>
+    <ion-list>
+        <p>{{len}} contacts</p>
+        <ion-item *ngFor="let contact of contactList">
+            <h3>{{contact?.displayName}}</h3>
+            <p *ngFor="let num of contact?.phoneNumbers">
+                {{num.value}}
+            </p>
+        </ion-item>
+        <!-- <div class="container" *ngFor="let contact of contactlist">
+            <h2 class="name">{{ contact.displayName }}</h2>
+            <p class="number">{{ contact.phoneNumbers }}</p>
+        </div> -->
+    </ion-list>
+
+</ion-content>
