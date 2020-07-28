@@ -24,23 +24,27 @@ export class AddExpensePage implements OnInit {
   }
 
   onSubmit(form: NgForm){
-    this.storage.get('saving').then(val => {
-      this.savedBalance = val;
-    });
-    // tslint:disable-next-line:no-debugger
-    // debugger;
-    if (this.savedBalance < this.formModel.amount){
-      // tslint:disable-next-line:no-debugger
-      // debugger;
-      alert('please enter expense less then your balance!');
-    }
-
-    else{
-      this.storage.set('expenseAmount', this.formModel.amount);
-      this.storage.set('tag', this.formModel.tag);
-      this.router.navigateByUrl('/expense-tracker');
-    }
+    this.storage.set('expenseAmount', this.formModel.amount);
+    this.storage.set('tag', this.formModel.tag);
+    alert('yoyr expense for '+ this.formModel.tag + ' is ' + this.formModel.amount);
     console.log(this.formModel);
+    form.reset();
   }
+    // this.storage.get('saving').then(val => {
+    //   this.savedBalance = val;
+    // });
+    // // tslint:disable-next-line:no-debugger
+    // // debugger;
+    // if (this.savedBalance < this.formModel.amount){
+    //   // tslint:disable-next-line:no-debugger
+    //   // debugger;
+    //   alert('please enter expense less then your balance!');
+    // }
+
+    // else{
+     
+      // this.router.navigateByUrl('/expense-tracker');
+    // }
+    
 
 }

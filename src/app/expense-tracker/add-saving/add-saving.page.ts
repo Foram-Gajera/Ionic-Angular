@@ -22,14 +22,10 @@ export class AddSavingPage implements OnInit {
   }
 
   onSubmit(form: NgForm){
-    // this.storage.get('saving').then(val => {
-    //   this.oldsaving = val;
-    // });
-    alert(this.oldsaving);
     this.submitted = true;
     this.storage.set('saving', this.formModel.saving);
-    alert(this.formModel.saving);
-    this.router.navigateByUrl('/expense-tracker');
+    alert(this.formModel.saving + "is added");
+    form.reset();
   }
 
 }

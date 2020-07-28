@@ -17,15 +17,13 @@ export class ExpenseTrackerPage implements OnInit {
   constructor(public storage: Storage) { }
 
   ngOnInit() {
-    this.storage.get('saving').then(val => {
-      this.balance = val;
-    });
+   
     this.storage.get('expenseAmount').then(val => {
       this.expense = val;
       // this.balance = this.balance - this.expense;
     });
 
-    if (this.expense > 0){
+    if (this.expense>0){
       this.balance = this.balance - this.expense;
       this.storage.set('newbalance', this.balance);
 
@@ -33,18 +31,15 @@ export class ExpenseTrackerPage implements OnInit {
         this.balance = val;
       });
     }
-
-
-    // if (this.expense > 0){
-    //   // window.location.reload();
-    //   this.newBalance = this.balance - this.expense;
-    //   alert(this.newBalance);
-    // }
-    // else if (this.balance > 0){
-    //   // window.location.reload();
-    //   this.newBalance = this.balance;
-    //   alert(this.newBalance);
-    // }
+    else if(this.expense === 0){
+      this.storage.get('saving').then(val => {
+        this.balance = val;
+      });
+    }
+    this.storage.get('saving').then(val => {
+      this.balance = val;
+    });
+    
   }
 
 
